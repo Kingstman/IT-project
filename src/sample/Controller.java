@@ -20,6 +20,9 @@ public class Controller {
     private URL location;
 
     @FXML
+    private Button IncidentButton;
+
+    @FXML
     private TextField DataField;
 
     @FXML
@@ -30,21 +33,61 @@ public class Controller {
 
     @FXML
     void initialize() {
-         FaceButton.setOnAction(event -> {
-             FaceButton.getScene().getWindow().hide();
-             FXMLLoader loader = new FXMLLoader();
-             loader.setLocation(getClass().getResource("/sample/signUp.fxml"));
-             try {
-                 loader.load();
-             } catch (IOException e) {
-                 e.printStackTrace();
-             }
-             Parent root = loader.getRoot();
-             Stage stage = new Stage();
-             stage.setScene(new Scene(root));
-             stage.showAndWait();
-         });
-
+        FaceButton.setOnAction(event -> {
+            FaceButton.getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/signup.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        });
+        FaceFiled.setOnAction(event -> {
+            FaceFiled.getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/app.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        });
+        DataField.setOnAction(event -> {
+            DataField.getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/app2.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        });
+        IncidentButton.setOnAction(event -> {
+            IncidentButton.getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/signup2.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        });
     }
 }
-

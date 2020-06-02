@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.sql.*;
 
 public class Main extends Application {
 
@@ -12,8 +13,51 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("My First App");
-        primaryStage.setScene(new Scene(root, 700, 400));
+        primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
+    }
+    public class BDW1 {
+        private static final String URL ="jdbc:mysql://localhost:3306/project";
+        private static final String USER = "root";
+        private static final String PASS  ="root";
+
+
+
+        private  Connection connection;
+
+
+
+        public BDW1() {
+
+
+
+
+            try {
+                connection = DriverManager.getConnection(URL, USER, PASS);
+                if (!connection.isClosed()) {
+                    System.out.println("Соединение с БД установлено");
+                }
+                Statement statement = connection.createStatement();
+                String querry = "select * from home";
+
+
+
+            } catch (SQLException e){
+                System.err.println("Не удалось соединиться с БД");
+            }
+        }
+
+
+
+        public Connection getConnection() {
+            return connection;
+        }
+
+
+
+        public void setConnection(Connection connection) {
+            this.connection = connection;
+        }
     }
 
 
